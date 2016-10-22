@@ -12,6 +12,7 @@ Users　　
 ```
   id  
   email  
+  name  
   encrypted_password  
   reset_password_token  
   remember_created_at  
@@ -23,7 +24,7 @@ Users　　
   created_at  
   updated_at  
   
-  index [id,email]  
+  index [email]  
 ```
 Groups  
 ```
