@@ -1,0 +1,63 @@
+html
+  height: 100%
+
+body
+  margin: 0
+  display: flex
+  flex-direction: column
+  font-family: "Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif
+  color: #434a54
+  background-color: #fafafa
+
+body,.wrap
+  flex: 1
+  height: 100%
+
+.wrap
+  height: 100%
+
+#chat-side
+  width: 300px
+  float: left
+  height: 100%
+  background-color: #2f3e51
+
+#chat-main
+  position: relative
+  width: calc(100% - 300px)
+  height: 100%
+  float: left
+
+.cf::after
+  content: ''
+  display: block
+  clear: both
+
+.chat-user
+  background-color: #253141
+  color: #FFFFFF
+  padding: 20px
+  font-size: 16px
+  &_name
+    float: left
+    font-weight: bold
+    line-height: 60px
+    letter-spacing: 2px
+  &_actions
+    float: right
+  &_action
+    float: left
+    display: inline-block
+    margin: 15px 0 15px 8px
+    line-height: 28px
+    color: #fff
+    font-size: 20px
+
+.chat-group
+  color: #FFFFFF
+  padding: 20px
+  &_name
+    font-size: 15px
+    margin-bottom: 5px
+  &_text
+    font-size: 11px
