@@ -24,8 +24,8 @@
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-has_many :groups 
-has_many :groupusers
+* has_many :groups 
+* has_many :groupusers
 
 ###Groups  
 | column | type | null | index |
@@ -35,8 +35,8 @@ has_many :groupusers
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-has_many :users
-has_many :groupusers
+* has_many :users
+* has_many :groupusers
 
 ###GroupUsers
 | column | type | null | index |
@@ -47,8 +47,8 @@ has_many :groupusers
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-belongs_to :user
-belongs_to :group
+* belongs_to :user
+* belongs_to :group
 
 ###Messages  
 | column | type | null | index |
@@ -60,5 +60,5 @@ belongs_to :group
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-belongs_to :user
-belongs_to :group
+* belongs_to :user
+* belongs_to :group
