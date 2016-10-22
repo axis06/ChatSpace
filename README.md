@@ -32,7 +32,7 @@
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-###UsersGurops
+###GuropUsers
 | column | type | null | index |
 |---|---|---|---|
 | `id`| integer  | false | |
