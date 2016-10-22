@@ -1,5 +1,5 @@
 #EXPERTカリキュラム
-[カリキュラム] (https://tech-camp.in/)
+[カリキュラム] (http://master.tech-camp.in/users/courses/28)
 
 ## 開発環境
 * Ruby 2.3.1　　
