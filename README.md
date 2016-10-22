@@ -8,51 +8,46 @@ Bundler version 1.13.5　　
 　　　　
 ## データベース設計  
 
-Users　　
-```
-  id  
-  email  
-  name  
-  encrypted_password  
-  reset_password_token  
-  remember_created_at  
-  sign_in_count	integer  
-  current_sign_in_at  
-  last_sign_in_at	datetime  
-  current_sign_in_ip  
-  last_sign_in_ip  
-  created_at  
-  updated_at  
-  
-  index [email]  
-```
-Groups  
-```
-  id  
-  name  
-  created_at  
-  updated_at  
-```
+###Users　　
+| column | type | null | index |
+|---|---|---|---|
+| `id`| integer  | false | |
+| `email` | string | false |t|
+| `name` | string | false | |
+| `encrypted_password` | string |  | |
+| `remember_created_at` | integer |  | |
+| `sign_in_count` | integer |  | |
+| `current_sign_in_at` | integer |  | |
+| `last_sign_in_at` | datetime |  | |
+| `current_sign_in_ip` | string |  | |
+| `last_sign_in_ip ` | string |  |
+| `created_at` | datetime | false | |
+| `updated_at` | datetime | false | |
 
-GuropsUsers  
-```
-  id  
-  user_id  
-  group_id  
-  created_at  
-  updated_at  
-  
-  index [user_id,group_id]  
-```
-Messages  
-```
-  id  
-  body  
-  image  
-  user_id  
-  group_id  
-  created_at  
-  updated_at  
-  
-  index [group_id]  
-```
+###Groups  
+| column | type | null | index |
+|---|---|---|---|
+| `id`| integer  | false | |
+| `name` | string | false |t|
+| `created_at` | datetime | false | |
+| `updated_at` | datetime | false | |
+
+###UsersGurops
+| column | type | null | index |
+|---|---|---|---|
+| `id`| integer  | false | |
+| `user_id` | integer | false |t|
+| `group_id` | integer | false |t|
+| `created_at` | datetime | false | |
+| `updated_at` | datetime | false | |
+
+###Messages  
+| column | type | null | index |
+|---|---|---|---|
+| `id`| integer  | false | |
+| `image` | string | false ||
+| `user_id` | integer | false |t|
+| `group_id` | integer | false |t|
+| `created_at` | datetime | false | |
+| `updated_at` | datetime | false | |
+
