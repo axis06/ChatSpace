@@ -44,3 +44,13 @@
               2016/10/22 07:34:52
           .message-text
             Hello World
+
+    .main-footer
+      .chat-footer
+        .message-new
+          .message-new_body
+            %textarea#message_text{:placeholder => "type a message"}
+          .message-new_file
+            %i.fa.fa-image
+        .message-send
+          %input{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
