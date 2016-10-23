@@ -9,55 +9,75 @@
 ## データベース設計  
 
 ###Users　　
-| column | type | null | index |
+| column | type | null |
 |---|---|---|---|
-| `id`| integer  | false | |
-| `email` | string | false |t|
+| `id`| integer  | false |
+| `email` | string | false |
 | `name` | string | false | |
-| `encrypted_password` | string |  | |
-| `remember_created_at` | integer |  | |
-| `sign_in_count` | integer |  | |
-| `current_sign_in_at` | integer |  | |
-| `last_sign_in_at` | datetime |  | |
-| `current_sign_in_ip` | string |  | |
-| `last_sign_in_ip ` | string |  |
-| `created_at` | datetime | false | |
-| `updated_at` | datetime | false | |
+| `encrypted_password` | string |  |
+| `remember_created_at` | integer |  |
+| `sign_in_count` | integer |  |
+| `current_sign_in_at` | integer |  |
+| `last_sign_in_at` | datetime |  |
+| `current_sign_in_ip` | string |  |
+| `last_sign_in_ip ` | string |   |
+| `created_at` | datetime | false | 
+| `updated_at` | datetime | false | 
 
-* has_many :groupusers
+##### index
+* email
+
+##### association
+* has_many :groups, through: :groupusers
 
 ###Groups  
-| column | type | null | index |
+| column | type | null |
 |---|---|---|---|
-| `id`| integer  | false | |
-| `name` | string | false |t|
-| `created_at` | datetime | false | |
-| `updated_at` | datetime | false | |
+| `id`| integer  | false | 
+| `name` | string | false |
+| `created_at` | datetime | false |
+| `updated_at` | datetime | false |
 
-* has_many :groupusers
+
+##### index
+
+
+##### association
+* has_many :user, through: :groupusers
+* has_many :messages
 
 ###GroupUsers
-| column | type | null | index |
+| column | type | null |
 |---|---|---|---|
-| `id`| integer  | false | |
-| `user_id` | integer | false |t|
-| `group_id` | integer | false |t|
-| `created_at` | datetime | false | |
-| `updated_at` | datetime | false | |
+| `id`| integer  | false |
+| `user_id` | integer | false |
+| `group_id` | integer | false |
+| `created_at` | datetime | false |
+| `updated_at` | datetime | false |
 
+##### index
+* user_id
+* group_id
+
+##### association
 * belongs_to :user
 * belongs_to :group
 
 ###Messages  
-| column | type | null | index |
+| column | type | null |
 |---|---|---|---|
-| `id`| integer  | false | |
-| `body` | text | false ||
-| `image` | string | false ||
-| `user_id` | integer | false |t|
-| `group_id` | integer | false |t|
-| `created_at` | datetime | false | |
-| `updated_at` | datetime | false | |
+| `id`| integer  | false |
+| `body` | text | false |
+| `image` | string | false |
+| `user_id` | integer | false |
+| `group_id` | integer | false |
+| `created_at` | datetime | false |
+| `updated_at` | datetime | false |
 
+##### index
+* user_id
+* group_id
+
+##### association
 * belongs_to :user
 * belongs_to :group
