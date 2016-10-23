@@ -24,7 +24,6 @@
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-* has_many :groups 
 * has_many :groupusers
 
 ###Groups  
@@ -35,7 +34,6 @@
 | `created_at` | datetime | false | |
 | `updated_at` | datetime | false | |
 
-* has_many :users
 * has_many :groupusers
 
 ###GroupUsers
@@ -54,6 +52,7 @@
 | column | type | null | index |
 |---|---|---|---|
 | `id`| integer  | false | |
+| `body` | text | false ||
 | `image` | string | false ||
 | `user_id` | integer | false |t|
 | `group_id` | integer | false |t|
