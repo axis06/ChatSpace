@@ -43,7 +43,7 @@
 
 
 ##### association
-* has_many :user, through: :groupusers
+* has_many :users, through: :groupusers
 * has_many :messages
 
 ###GroupUsers
