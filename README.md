@@ -5,7 +5,7 @@
 * Ruby 2.3.1　　
 * Rails 5.0.0.1　　
 * Bundler version 1.13.5　　
-  
+
 ## データベース設計  
 
 ###Users　　
@@ -21,10 +21,10 @@
 | `last_sign_in_at` | datetime |  |
 | `current_sign_in_ip` | string |  |
 | `last_sign_in_ip ` | string |   |
-| `created_at` | datetime | false | 
-| `updated_at` | datetime | false | 
+| `created_at` | datetime | false |
+| `updated_at` | datetime | false |
 
-##### index
+##### index:
 * email
 
 ##### association
@@ -33,7 +33,7 @@
 ###Groups  
 | column | type | null |
 |---|---|---|---|
-| `id`| integer  | false | 
+| `id`| integer  | false |
 | `name` | string | false |
 | `created_at` | datetime | false |
 | `updated_at` | datetime | false |
@@ -67,8 +67,8 @@
 | column | type | null |
 |---|---|---|---|
 | `id`| integer  | false |
-| `body` | text | false |
-| `image` | string | false |
+| `body` | text |  |
+| `image` | string |  |
 | `user_id` | integer | false |
 | `group_id` | integer | false |
 | `created_at` | datetime | false |
