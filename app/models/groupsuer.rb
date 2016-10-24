@@ -1,0 +1,2 @@
+class Groupsuer < ApplicationRecord
+end
