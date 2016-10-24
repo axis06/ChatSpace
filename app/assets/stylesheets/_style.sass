@@ -1,0 +1,161 @@
+html
+  height: 100%
+
+body
+  margin: 0
+  display: flex
+  flex-direction: column
+  font-family: "Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif
+  color: #434a54
+  background-color: #fafafa
+
+body,.wrap
+  flex: 1
+  height: 100%
+
+.wrap
+  min-width: 980px
+  height: 100%
+
+#chat-side
+  width: 300px
+  float: left
+  height: 100%
+  background-color: #2f3e51
+
+#chat-main
+  position: relative
+  width: calc(100% - 300px)
+  height: 100%
+  float: left
+
+.cf::after
+  content: ''
+  display: block
+  clear: both
+
+.chat-user
+  background-color: #253141
+  color: #FFFFFF
+  padding: 20px
+  font-size: 16px
+  &_name
+    float: left
+    font-weight: bold
+    line-height: 60px
+    letter-spacing: 2px
+  &_actions
+    float: right
+  &_action
+    float: left
+    display: inline-block
+    margin: 15px 0 15px 8px
+    line-height: 28px
+    color: #fff
+    font-size: 20px
+
+.chat-group
+  color: #FFFFFF
+  padding: 20px
+  &_name
+    font-size: 15px
+    margin-bottom: 5px
+  &_text
+    font-size: 11px
+
+.main-herder
+  padding: 0 40px
+  background-color: #fff
+  border-bottom: 1px solid #eeeeee
+  &_left
+    float: left
+  &_right
+    float: right
+
+.herder-group
+  &_name
+    margin: 35px 0 15px
+    line-height: 20px
+    font-size: 20px
+    letter-spacing: 2px
+  &_menbers
+    font-size: 12px
+    color: #999999
+
+.btn_edit
+  display: inline-block
+  margin: 28px 0
+  padding-right: 20px
+  padding-left: 20px
+  line-height: 40px
+  color: #38aef0
+  font-size: 14px
+  border: 2px solid
+
+.main-body
+  padding: 0 40px
+  margin: 46px 0
+
+.message-status
+  line-height: 20px
+  &_name
+    float: left
+    color: #434A54
+    font-weight: 600
+    font-size: 16px
+  &_time
+    color: #999999
+    float: left
+    font-size: 12px
+    margin-left: 10px
+
+
+.message-text
+  margin: 10px 0 40px
+  font-size: 14px
+
+.main-footer
+  position: absolute
+  right: 0
+  bottom: 0
+  left: 0
+  padding: 20px 40px
+  background-color: #ddd
+  .chat-footer
+    width: 100%
+  .message-new
+    width: calc(100% - 135px)
+    &_body
+      width: 100%
+      float: left
+      textarea
+        width: 100%
+        height: 20px
+        padding: 15px 10px
+        line-height: 20px
+        border: none
+        resize: none
+        display: block
+    &_file
+      position: absolute
+      display: inline-block
+      height: 50px
+      line-height: 50px
+      text-align: center
+      cursor: pointer
+      margin: 0 -10px
+
+
+  .message-send
+    float: right
+    input[type="submit"]
+      float: left
+      display: inline-block
+      width: 100px
+      margin-left: 15px
+      line-height: 50px
+      color: #fff
+      background-color: #38aef0
+      text-align: center
+      border: none
+      padding: 0
