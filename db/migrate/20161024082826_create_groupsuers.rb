@@ -1,8 +1,8 @@
 class CreateGroupsuers < ActiveRecord::Migration[5.0]
   def change
     create_table :groupsuers do |t|
-      t.integer :user_id
-      t.integer :group_id
+      t.integer :user_id,  null: false
+      t.integer :group_id, null: false
 
       t.timestamps
     end
