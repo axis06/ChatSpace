@@ -7,10 +7,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to :back, notice: 'Item was successfully created.' }
+        format.html { redirect_to :back}
         format.json { render action: 'show', status: :created, location: @item }
       else
-        format.html { redirect_to :back }
+        format.html { redirect_to :back, alert: '画像または文章を入力してください'  }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
