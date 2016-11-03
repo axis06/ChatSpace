@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
         format.html { redirect_to :back, notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @item }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to :back }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end

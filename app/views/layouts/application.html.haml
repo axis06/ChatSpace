@@ -6,4 +6,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    -if notice.present?
+      %p.notice= notice
+    -if notice.present?
+      %p.alert= alert
     = yield
