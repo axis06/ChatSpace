@@ -1,6 +1,9 @@
-class MessageController < ApplicationController
+class MessagesController < ApplicationController
   def create
-    @message = Message.new(item_params)
+    @message = Message.new(message_params)
+    @message.user_id = 0#FIXME
+    @message.group_id = 0#FIXME
+
 
     respond_to do |format|
       if @message.save
