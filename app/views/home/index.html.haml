@@ -47,10 +47,11 @@
 
     .main-footer
       .chat-footer
-        .message-new
-          .message-new_body
-            %textarea#message_text{:placeholder => "type a message"}
-          .message-new_file
-            %i.fa.fa-image
-        .message-send
-          %input{"data-disable-with" => "Send", :type => "submit", :value => "Send"}
+        = form_for(@message) do |f|
+          .message-new
+            .message-new_body
+              = f.text_area :body, placeholder: "type a message"
+            .message-new_file
+              %i.fa.fa-image
+          .message-send
+            =f.submit "Send"
