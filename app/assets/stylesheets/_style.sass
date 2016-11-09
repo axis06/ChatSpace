@@ -1,5 +1,18 @@
 $notice-color: #38aef0
 $alert-color: #d65f4c
+$white-color: #fafafa
+
+$bg-chat-side: #2f3e51
+$bg-chat-user: #253141
+$bg-main-foot: #ddd
+
+$text-chat-user: #fff
+$text-main-head: #fff
+$text-main-foot: #fff
+
+
+$chat-cleam-color: #999999
+$chat-blue-color: #38aef0
 
 
 
@@ -12,7 +25,7 @@ body
   flex-direction: column
   font-family: "Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif
   color: #434a54
-  background-color: #fafafa
+  background-color: $white-color
 
 body,.wrap
   flex: 1
@@ -26,7 +39,7 @@ body,.wrap
   width: 300px
   float: left
   height: 100%
-  background-color: #2f3e51
+  background-color: $bg-chat-side
 
 #chat-main
   position: relative
@@ -40,8 +53,8 @@ body,.wrap
   clear: both
 
 .chat-user
-  background-color: #253141
-  color: #FFFFFF
+  background-color: $bg-chat-user
+  color: $text-chat-user
   padding: 20px
   font-size: 16px
   &_name
@@ -70,7 +83,7 @@ body,.wrap
 
 .main-herder
   padding: 0 40px
-  background-color: #fff
+  background-color: $text-main-head
   border-bottom: 1px solid #eeeeee
   &_left
     float: left
@@ -93,7 +106,7 @@ body,.wrap
   padding-right: 20px
   padding-left: 20px
   line-height: 40px
-  color: #38aef0
+  color: $chat-blue-color
   font-size: 14px
   border: 2px solid
 
@@ -109,7 +122,7 @@ body,.wrap
     font-weight: 600
     font-size: 16px
   &_time
-    color: #999999
+    color: $chat-cleam-color
     float: left
     font-size: 12px
     margin-left: 10px
@@ -125,7 +138,7 @@ body,.wrap
   bottom: 0
   left: 0
   padding: 20px 40px
-  background-color: #ddd
+  background-color: $bg-main-foot
   .chat-footer
     width: 100%
   .message-new
@@ -160,8 +173,7 @@ body,.wrap
       margin-left: 15px
       line-height: 50px
       color: #fff
-      background-color: #38aef0
-      text-align: center
+      background-color: $chat-blue-color
       border: none
       padding: 0
 .notice,.alert
