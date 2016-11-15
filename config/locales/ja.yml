@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank:
+                '名前に空白は利用できません'
