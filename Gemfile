@@ -43,7 +43,7 @@ group :development do
   gem 'bullet'
   gem 'better_errors'
   gem 'rspec-rails', "~> 3.5.2"
-
+  gem 'factory_girl_rails'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
