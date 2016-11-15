@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
-    @message.user_id = 0#FIXME
+    @message.user_id = current_user.id
     @message.group_id = 0#FIXME
 
 
