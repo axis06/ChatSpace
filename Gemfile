@@ -42,6 +42,7 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'bullet'
   gem 'better_errors'
+  gem 'rspec-rails', "~> 3.1.0"
 
 end
 # Use ActiveModel has_secure_password
