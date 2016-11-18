@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank:
+                '名前に空白は利用できません'
+            email:
+              blank:
+                'メールアドレスに空白は利用できません'
+              taken:
+                'すでにそのメールアドレスは利用されてます'
+            password:
+              blank:
+                'パスワードに空白は利用できません'
