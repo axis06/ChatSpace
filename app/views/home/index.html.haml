@@ -5,7 +5,8 @@
         axis06
       .chat-user_actions
         .chat-user_action
-          %i.fa.fa-pencil-square-o
+          = link_to(new_group_path) do
+            %i.fa.fa-pencil-square-o
         .chat-user_action
           = link_to(edit_user_registration_path) do
             %i.fa.fa-cog
