@@ -35,6 +35,13 @@ body,.wrap
   min-width: 980px
   height: 100%
 
+.clearfix:after
+  content: " "
+  display: block
+  clear: both
+
+
+
 #chat-side
   width: 300px
   float: left
@@ -222,9 +229,11 @@ body,.wrap
       width: 30%
       padding-right: 20px
       padding-left: 20px
+      box-sizing: border-box
     .chat-group-form__field--right
       float: right
       width: 70%
+      box-sizing: border-box
     .chat-group-form__label
       display: block
       line-height: 50px
