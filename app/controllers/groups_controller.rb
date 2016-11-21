@@ -1,9 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_group, only: [:show, :edit, :update]
 
   def new
     @groups = Group.new;
   end
+
   def create
     @group = Group.new(group_params)
 
@@ -22,6 +24,10 @@ class GroupsController < ApplicationController
   end
 
   def update
+  end
+
+  def show
+    @message = Message.new
   end
 
   private

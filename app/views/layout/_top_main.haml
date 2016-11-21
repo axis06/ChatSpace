@@ -1,11 +1,13 @@
 .main-herder.cf
   .main-herder_left
     .herder-group_name
-      div
+      = @group.name
     .herder-group_menbers
       Members:
-      %span.herder-group_menber
-        axis06
+      - @group.users.each do |u|
+        %span.herder-group_menber
+          = u.name
+
   .main-herder_right
     .btn_edit
-      Edit
+      =link_to "Edit",edit_group_path(@group)
