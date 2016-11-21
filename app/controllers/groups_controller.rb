@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update]
 
   def new
-    @groups = Group.new;
+    @group = Group.new;
   end
 
   def create
@@ -24,6 +24,17 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:id])
+
+    respond_to do |format|
+      if @group.update(group_params)
+        format.html { redirect_to @group, notice: 'グループを編集しました' }
+        format.json { render :show, status: :created, location: @group }
+      else
+        format.html { render :new }
+        format.json { render json: @group.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def show
