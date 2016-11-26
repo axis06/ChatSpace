@@ -24,8 +24,6 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @group = Group.find(params[:id])
-
     respond_to do |format|
       if @group.update(group_params)
         format.html { redirect_to @group, notice: 'グループを編集しました' }
