@@ -1,4 +1,8 @@
 class Group < ApplicationRecord
+  has_many :groupusers, dependent: :destroy
   has_many :users, through: :groupusers
   has_many :messages
-end
+  accepts_nested_attributes_for :groupusers, allow_destroy: true
+
+  validates :name, presence: true
+endi

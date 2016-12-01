@@ -1,0 +1,21 @@
+.main-body
+  %ul.chat-messages
+    %li.messages
+      .message-status.cf
+        %p.message-status_name
+          axis06
+        %p.message-status_time
+          2016/10/22 07:34:52
+      .message-text
+        Hello World
+
+.main-footer
+  .chat-footer
+    = form_for(@message) do |f|
+      .message-new
+        .message-new_body
+          = f.text_area :body, placeholder: "type a message"
+        .message-new_file
+          %i.fa.fa-image
+      .message-send
+        = f.submit "Send"

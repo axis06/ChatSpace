@@ -7,5 +7,5 @@
     = csrf_meta_tags
   %body
     - flash.each do |k, v|
-      %p{ class: k }= v
+      %p.text-center{ class: k }= v
     = yield
