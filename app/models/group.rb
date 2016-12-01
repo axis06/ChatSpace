@@ -5,4 +5,4 @@ class Group < ApplicationRecord
   accepts_nested_attributes_for :groupusers, allow_destroy: true
 
   validates :name, presence: true
-endi
+end

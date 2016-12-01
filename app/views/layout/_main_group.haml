@@ -1,11 +1,11 @@
 .chat-groups
-  .chat-group
-    .chat-group_name
-      div
-    .chat-group_text
-      test
-  .chat-group
-    .chat-group_name
-      apple
-    .chat-group_text
-      まだメッセージはありません。
+  -@groups.each do |group|
+    =link_to group_path(group) do
+      .chat-group
+        .chat-group_name
+          = group.name
+        .chat-group_text
+          -if group.messages.present?
+            = group.messages.first.body
+          -else
+            まだメッセージがありません

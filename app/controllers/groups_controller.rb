@@ -36,7 +36,9 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @groups = Group.all
     @message = Message.new
+    @messages = @group.messages
   end
 
   private

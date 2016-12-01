@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
+  before_action :set_group, only: [:create]
+
   def create
     @message = Message.new(message_params)
     @message.user_id = current_user.id
-    @message.group_id = 0#FIXME
+    @message.group_id = @group.id
 
 
     respond_to do |format|
@@ -16,7 +18,13 @@ class MessagesController < ApplicationController
     end
   end
 
+
   private
+
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
 
   def message_params
     params.require(:message).permit(:body)
