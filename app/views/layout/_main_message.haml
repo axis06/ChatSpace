@@ -4,11 +4,11 @@
       %li.messages
         .message-status.cf
           %p.message-status_name
-            =message.user.name
+            = message.user.name
           %p.message-status_time
-            2016/10/22 07:34:52
+            = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
         .message-text
-          =message.body
+          = message.body
 
 .main-footer
   .chat-footer
