@@ -22,7 +22,6 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
-
   def message_params
     params.require(:message).permit(:body)
   end
