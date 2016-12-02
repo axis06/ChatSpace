@@ -1,6 +1,6 @@
 .chat-groups
   -@groups.each do |group|
-    =link_to group_path(group) do
+    = link_to group_path(group) do
       .chat-group
         .chat-group_name
           = group.name
