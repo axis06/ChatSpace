@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group, only: [:create]
 
   def create
-    @message = Message.new(message_params.merge(user_id: user_id,group_id: @group.id))
+    @message = Message.new(message_params.merge(user_id: current_user.id,group_id: @group.id))
 
     respond_to do |format|
       if @message.save
