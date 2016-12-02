@@ -5,7 +5,4 @@
         .chat-group_name
           = group.name
         .chat-group_text
-          -if group.messages.present?
-            = group.messages.last.body
-          -else
-            まだメッセージがありません
+          = get_last_message(group)
