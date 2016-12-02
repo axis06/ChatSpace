@@ -6,6 +6,6 @@
           = group.name
         .chat-group_text
           -if group.messages.present?
-            = group.messages.first.body
+            = group.messages.last.body
           -else
             まだメッセージがありません
