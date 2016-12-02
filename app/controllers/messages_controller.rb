@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group, only: [:create]
 
   def create
-    @message = Message.new(message_params.merge(user_id: current_user.id,group_id: @group.id))
+    @message = Message.new(message_params)
 
     respond_to do |format|
       if @message.save
@@ -23,6 +23,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:body).merge(user_id: current_user.id,group_id: @group.id)
   end
 end
