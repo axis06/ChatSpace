@@ -38,8 +38,9 @@ $(document).on("page:change", function() {
       $("#message_body").val("");
       appendList(data);
     })
-    .fail(function(){
+    .fail(function(data){
       alert("error")
+      console.log(data.error);
     });
   });
 });
