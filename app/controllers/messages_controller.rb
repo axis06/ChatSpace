@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_group, only: [:create]
+  before_action :set_group, only: [:create,:show]
 
   def create
     @message = Message.new(message_params)
@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to :back}
-        format.json { render json: @message.as_json.merge(name: @message.user.name) }
+        format.json { render :show}
+        #format.json { render json: @message.as_json.merge(name: @message.user.name) }
       else
         format.html { redirect_to :back, alert: '画像または文章を入力してください'  }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -15,6 +16,8 @@ class MessagesController < ApplicationController
     end
   end
 
+  def show
+  end
 
   private
 
