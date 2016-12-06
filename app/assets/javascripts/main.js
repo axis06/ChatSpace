@@ -1,7 +1,7 @@
 $(document).on("page:change", function() {
 
   function appendList(data) {
-    var mesSpace = $(".chat-messages");
+    var $mesSpace = $(".chat-messages");
     var mes = $('<div class="message-text">');
     var mesList = $('<div class="messages">');
 
@@ -15,7 +15,7 @@ $(document).on("page:change", function() {
     var appendmesStsLi = mesStatusList.append(appendName).append(appenDdatatime);
     var appendLi = mesList.append(appendmesStsLi).append(appendMes);
 
-    mesSpace.append(appendLi)
+    $mesSpace.append(appendLi)
   }
 
   $( "#new_message" ).on("submit", function(e) {
@@ -37,7 +37,6 @@ $(document).on("page:change", function() {
     .done(function(data){
       $("#message_body").val("");
       appendList(data);
-      console.log(data);
     })
     .fail(function(){
       alert("error")
