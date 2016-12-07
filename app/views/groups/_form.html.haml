@@ -12,12 +12,15 @@
         %input#user-name.chat-group-form__input{ placeholder: "名前を入力してください", type: "text"}
       #user-search-result
 
-
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label "チャットメンバー", class: 'chat-group-form__label'
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat-group-form__input',placeholder: "チャットメンバー"
+      #user-chat-menber
+        .chat-group-user.clearfix
+          %input{name: "",type: "hidden", value: current_user.id}/
+          %p.chat-group-user__name
+            =current_user.name
 
 
   .chat-group-form__field.clearfix
