@@ -7,17 +7,17 @@ $(document).on("page:change", function() {
   function appendList(id, name, status) {
     var $user_result = $('<div class="chat-group-user clearfix">');
     var $user_result_name = $('<p class="chat-group-user__name">');
-    $user_result.attr('id', 'user_'+id);
+    $user_result.attr('id', 'user_' + id);
     $user_result.attr('data-id', id);
 
-    var $user_result_btn = $('<a class="user-'+status+' chat-group-user__btn chat-group-user__btn--'+status+'">');
+    var $user_result_btn = $('<a class="user-' + status + ' chat-group-user__btn chat-group-user__btn--' + status + '">');
     (status=="add")? $user_result_btn.append("追加"): $user_result_btn.append("削除");
 
     $user_result_btn.attr("data-id", id);
     $user_result_btn.attr("data-name", name);
     var $appendName = $user_result_name.append(name);
 
-    if (status=="add"){
+    if (status == "add"){
       var $appendList = $user_result.append($user_result_name).append($user_result_btn);
       $user_results.append($appendList)
     }else{
@@ -44,7 +44,7 @@ $(document).on("page:change", function() {
           menbers.push(Number($(menber).attr("data-id")));
         });
         $.each( data, function( key, value ) {
-          if(menbers.indexOf(value.id)==-1){
+          if(menbers.indexOf(value.id) == -1){
             appendList(value.id, value.name, "add")
           }
         });
@@ -60,11 +60,11 @@ $(document).on("page:change", function() {
 
   $("#user-search-result").on("click", ".user-add", function() {
     appendList($(this).attr('data-id'), $(this).attr('data-name'), "remove")
-    $("#user_"+$(this).attr('data-id')).remove();
+    $("#user_" + $(this).attr('data-id')).remove();
   });
 
   $("#user-chat-menber").on("click", ".user-remove", function() {
-    $("#user_"+$(this).attr('data-id')).remove();
+    $("#user_" + $(this).attr('data-id')).remove();
   });
 
 });
