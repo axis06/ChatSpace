@@ -1,21 +1,21 @@
 $(document).on("page:change", function() {
 
   function appendList(data) {
-    var mesSpace = $(".chat-messages");
-    var mes = $('<div class="message-text">');
-    var mesList = $('<div class="messages">');
+    var $mesSpace = $(".chat-messages");
+    var $mes = $('<div class="message-text">');
+    var $mesList = $('<div class="messages">');
 
-    var mesStatusList = $('<div class="message-status cf">');
-    var name = $('<p class="message-status_name">');
-    var datetime = $('<p class="message-status_time">');
+    var $mesStatusList = $('<div class="message-status cf">');
+    var $name = $('<p class="message-status_name">');
+    var $datetime = $('<p class="message-status_time">');
 
-    var appendName = name.append(data.name);
-    var appenDdatatime = datetime.append(data.created_at);
-    var appendMes = mes.append(data.body);
-    var appendmesStsLi = mesStatusList.append(appendName).append(appenDdatatime);
-    var appendLi = mesList.append(appendmesStsLi).append(appendMes);
+    var $appendName = $name.append(data.name);
+    var $appenDdatatime = $datetime.append(data.created_at);
+    var $appendMes = $mes.append(data.body);
+    var $appendmesStsLi = $mesStatusList.append(appendName).append(appenDdatatime);
+    var $appendList = $mesList.append(appendmesStsLi).append(appendMes);
 
-    mesSpace.append(appendLi)
+    $mesSpace.append(appendList)
   }
 
   $( "#new_message" ).on("submit", function(e) {
