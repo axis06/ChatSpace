@@ -9,11 +9,19 @@ $(document).on("page:change", function() {
     var $datetime = $('<p class="message-status_time">');
     var $mes = $('<div class="message-text">');
 
+
     var $appendName = $name.append(data.name);
     var $appenDatetime = $datetime.append(data.created_at);
     var $appendMes = $mes.append(data.body);
     var $appendmesStsLi = $mesStatusList.append($appendName).append($appenDatetime);
-    var $appendList = $mesList.append($appendmesStsLi).append($appendMes);
+
+    if (data.image.url){
+      var $image = $('<img class="img-responsive">');
+      $image.attr("src",data.image.url)
+      var $appendList = $mesList.append($appendmesStsLi).append($appendMes).append($image);
+    }else{
+      var $appendList = $mesList.append($appendmesStsLi).append($appendMes);
+    }
 
     $mesSpace.append($appendList)
   }
