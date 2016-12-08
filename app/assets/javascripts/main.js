@@ -22,15 +22,14 @@ $(document).on("page:change", function() {
     e.preventDefault();
     var postUrl = $("#new_message").attr("action");
     var mesBody = $("#message_body").val();
+    var mesImg = $("#message_image").val();
 
+    var form = $("#new_message").get()[0];
+    var formData = new FormData( form );
     $.ajax({
       type: "post",
       url: postUrl ,
-      data: {
-        message: {
-          body: mesBody,
-          image: ""
-        }
+      data: formData,
       },
       dataType: "json"
     })

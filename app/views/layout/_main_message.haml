@@ -15,8 +15,10 @@
     = form_for([@group, @message]) do |f|
       .message-new
         .message-new_body
+          = f.file_field :image
           = f.text_area :body, placeholder: "type a message"
         .message-new_file
           %i.fa.fa-image
+
       .message-send
         = f.submit "Send"
