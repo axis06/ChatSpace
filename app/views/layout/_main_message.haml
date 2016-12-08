@@ -9,14 +9,18 @@
             = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
         .message-text
           = message.body
+        .message-image
+          = image_tag(message.image,class: "img-responsive") if message.image?
 
 .main-footer
   .chat-footer
     = form_for([@group, @message]) do |f|
       .message-new
         .message-new_body
+          = f.file_field :image,class: "hide"
           = f.text_area :body, placeholder: "type a message"
         .message-new_file
           %i.fa.fa-image
+
       .message-send
         = f.submit "Send"

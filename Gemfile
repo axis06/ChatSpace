@@ -30,6 +30,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'guard'
 gem 'guard-livereload', require: false
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
 group :development do
   gem 'pry-rails'
