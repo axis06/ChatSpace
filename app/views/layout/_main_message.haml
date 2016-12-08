@@ -9,6 +9,8 @@
             = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
         .message-text
           = message.body
+        .message-image
+          = image_tag(message.image,class: "img-responsive") if message.image?
 
 .main-footer
   .chat-footer
