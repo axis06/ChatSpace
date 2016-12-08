@@ -9,7 +9,6 @@ $(document).on("page:change", function() {
     var $datetime = $('<p class="message-status_time">');
     var $mes = $('<div class="message-text">');
 
-
     var $appendName = $name.append(data.name);
     var $appenDatetime = $datetime.append(data.created_at);
     var $appendMes = $mes.append(data.body);
