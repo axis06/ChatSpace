@@ -16,7 +16,8 @@ $(document).on("page:change", function() {
 
     if (data.image.url){
       var $image = $('<img class="img-responsive">');
-      $image.attr("src",data.image.url)
+      $image.attr("src", data.image.url);
+
       var $appendList = $mesList.append($appendmesStsLi).append($appendMes).append($image);
     }else{
       var $appendList = $mesList.append($appendmesStsLi).append($appendMes);
