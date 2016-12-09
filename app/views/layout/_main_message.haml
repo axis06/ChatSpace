@@ -1,7 +1,7 @@
 .main-body
   %ul.chat-messages
     - @messages.each do |message|
-      %li.messages
+      %li.message{"data-id": message.id}
         .message-status.cf
           %p.message-status_name
             = message.user.name
