@@ -11,7 +11,7 @@ $(document).on("page:change", function() {
     var $appenDatetime = $datetime.append(data.created_at);
     var $appendMes = $mes.append(data.body);
     var $appendmesStsLi = $mesStatusList.append($appendName).append($appenDatetime);
-    $mesList.attr("data-id",data.id)
+    $mesList.attr("data-id", data.id)
 
     if (data.image.url){
       var $image = $('<img class="img-responsive">');
@@ -26,27 +26,29 @@ $(document).on("page:change", function() {
   }
 
   timer = setInterval(function(){
-    $.ajax({
-      type: "get",
-      url: window.location.href,
-      dataType: "json"
-    })
-    .done(function(data){
-      var $mesSpacePre = $('<ul class="chat-messages">');
-      var messages = [];
-      $.each($(".chat-messages").children('.message'), function( key, mes ) {
-        messages.push(Number($(mes).attr("data-id")));
+    if($("#chat-main")){
+      $.ajax({
+        type: "get",
+        url: window.location.href,
+        dataType: "json"
+      })
+      .done(function(data){
+        var $mesSpacePre = $('<ul class="chat-messages">');
+        var messages = [];
+        $.each($(".chat-messages").children('.message'), function( key, mes ) {
+          messages.push(Number($(mes).attr("data-id")));
+        });
+        $.each( data, function( key, value ) {
+          if(messages.indexOf(value.id) == -1){
+            $(".chat-messages").append(appendList(value));
+          }
+        });
+      })
+      .fail(function(jqXHR){
+        alert("error")
+        console.log(jqXHR);
       });
-      $.each( data, function( key, value ) {
-        if(messages.indexOf(value.id) == -1){
-          $(".chat-messages").append(appendList(value));
-        }
-      });
-    })
-    .fail(function(jqXHR){
-      alert("error")
-      console.log(jqXHR);
-    });
+    }
   }, 5000);
 
   $( "#new_message" ).on("submit", function(e) {
@@ -57,7 +59,7 @@ $(document).on("page:change", function() {
     var formData = new FormData( form );
     $.ajax({
       type: "post",
-      url: postUrl ,
+      url: postUrl,
       data: formData,
       dataType: "json",
       processData: false,
@@ -71,6 +73,8 @@ $(document).on("page:change", function() {
       alert("error")
       console.log(jqXHR);
     });
+
+    $("input").removeAttr("disabled");
   });
 
   $( ".fa-image" ).click(function() {
