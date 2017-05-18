@@ -8,21 +8,24 @@
 
 ## データベース設計  
 
-###Users　　
-| column | type | null |
-|---|---|---|---|
-| `id`| integer  | false |
-| `email` | string | false |
-| `name` | string | false | |
-| `encrypted_password` | string |  |
-| `remember_created_at` | integer |  |
-| `sign_in_count` | integer |  |
-| `current_sign_in_at` | integer |  |
-| `last_sign_in_at` | datetime |  |
-| `current_sign_in_ip` | string |  |
-| `last_sign_in_ip ` | string |   |
-| `created_at` | datetime | false |
-| `updated_at` | datetime | false |
+### Users　　
+
+| column        | type           | null  |
+| ------------- |:---------------| :-----|
+| id            | integer        | false |
+| email | string | false | 
+| name | string | false | | 
+| encrypted_password | string |  | 
+| remember_created_at | integer |  | 
+| sign_in_count | integer |  | 
+| current_sign_in_at | integer |  | 
+| last_sign_in_at | datetime |  | 
+| current_sign_in_ip | string |  | 
+| last_sign_in_p  | string |   | 
+| created_at | datetime | false | 
+| updated_at | datetime | false | 
+
+
 
 ##### index:
 * email
@@ -30,13 +33,14 @@
 ##### association
 * has_many :groups, through: :groupusers
 
-###Groups  
-| column | type | null |
-|---|---|---|---|
-| `id`| integer  | false |
-| `name` | string | false |
-| `created_at` | datetime | false |
-| `updated_at` | datetime | false |
+### Groups  
+
+| column        | type           | null  |
+| ------------- |:---------------| :-----|
+| id| integer  | false |
+| name | string | false |
+| created_at | datetime | false |
+| updated_at | datetime | false |
 
 
 ##### index
@@ -46,14 +50,15 @@
 * has_many :users, through: :groupusers
 * has_many :messages
 
-###GroupUsers
-| column | type | null |
-|---|---|---|---|
-| `id`| integer  | false |
-| `user_id` | integer | false |
-| `group_id` | integer | false |
-| `created_at` | datetime | false |
-| `updated_at` | datetime | false |
+### GroupUsers
+
+| column        | type           | null  |
+| ------------- |:---------------| :-----|
+| id| integer  | false |
+| user_id | integer | false |
+| group_id | integer | false |
+| created_at | datetime | false |
+| updated_at | datetime | false |
 
 ##### index
 * user_id
@@ -63,16 +68,16 @@
 * belongs_to :user
 * belongs_to :group
 
-###Messages  
-| column | type | null |
-|---|---|---|---|
-| `id`| integer  | false |
-| `body` | text |  |
-| `image` | string |  |
-| `user_id` | integer | false |
-| `group_id` | integer | false |
-| `created_at` | datetime | false |
-| `updated_at` | datetime | false |
+### Messages  
+| column        | type           | null  |
+| ------------- |:---------------| :-----|
+| id| integer  | false |
+| body | text |  |
+| image | string |  |
+| user_id | integer | false |
+| group_id | integer | false |
+| created_at | datetime | false |
+| updated_at | datetime | false |
 
 ##### index
 * user_id
